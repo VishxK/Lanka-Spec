@@ -1,0 +1,37 @@
+{
+  "wishlist": [
+    "custom-nissan-bluebird-sss-nissan-bluebird-sss",
+    "custom-toyota-carina-ti-myroad-toyota-carina-ti-myroad",
+    "custom-toyota-corona-premio-toyota-corona-premio-211",
+    "custom-toyota-glanza-v-glanza-starlet-gt",
+    "custom-honda-civic-sir-honda-ek3"
+  ],
+  "customVehicles": [
+    {
+      "id": "custom-honda-civic-sir-honda-ek3",
+      "name": "Honda",
+      "model": "Civic SiR",
+      "year": 1999,
+      "engine": "B16A2",
+      "type": "Sedan",
+      "image": "/vehicle-placeholder.svg",
+      "specs": {
+        "hp": "170 hp",
+        "torque": "118 lb-ft",
+        "transmission": "5-speed Manual",
+        "drivetrain": "Front-Wheel Drive",
+        "displacement": "1.6L",
+        "aspiration": "Naturally Aspirated",
+        "topSpeed": "137 mph",
+        "zeroToHundred": "7.1 sec",
+        "weight": "2,601 lbs",
+        "fuel": "Unleaded Petrol",
+        "productionYears": "1995-2000",
+        "bodyStyle": "4-Door Sedan"
+      },
+      "source": "gemini",
+      "sourceQuery": "honda ek3",
+      "generatedAt": "2026-05-02T10:51:39.376Z"
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+<svg width="800" height="600" viewBox="0 0 800 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="800" height="600" rx="48" fill="#0F172A"/>
+<rect x="60" y="60" width="680" height="480" rx="36" fill="#111827" stroke="#1F2937" stroke-width="4"/>
+<path d="M210 372L251 311C259 299 271 292 285 292H515C529 292 541 299 549 311L590 372H630C651 372 668 389 668 410V448H632C626 448 621 453 621 459V476H580V459C580 440 565 425 546 425H254C235 425 220 440 220 459V476H179V459C179 453 174 448 168 448H132V410C132 389 149 372 170 372H210Z" fill="#22C55E" fill-opacity="0.14" stroke="#38BDF8" stroke-width="4"/>
+<circle cx="261" cy="476" r="36" fill="#0B1220" stroke="#E2E8F0" stroke-opacity="0.3" stroke-width="6"/>
+<circle cx="539" cy="476" r="36" fill="#0B1220" stroke="#E2E8F0" stroke-opacity="0.3" stroke-width="6"/>
+<path d="M286 332H514" stroke="#E2E8F0" stroke-opacity="0.45" stroke-width="12" stroke-linecap="round"/>
+<path d="M332 300H468" stroke="#38BDF8" stroke-width="8" stroke-linecap="round"/>
+<text x="400" y="232" text-anchor="middle" fill="#E2E8F0" font-family="Arial, sans-serif" font-size="34" font-weight="700">AI Vehicle Profile</text>
+<text x="400" y="268" text-anchor="middle" fill="#94A3B8" font-family="Arial, sans-serif" font-size="18">Gemini generated custom car</text>
+</svg>
