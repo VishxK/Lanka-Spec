@@ -2,10 +2,11 @@ import type { Vehicle } from '@/data/vehicles';
 import { readFile, writeFile } from 'fs/promises';
 import { existsSync } from 'fs';
 import { join } from 'path';
+import { tmpdir } from 'os';
 
 // Use a dedicated compare storage file so comparison wishlist and generated
-// vehicles are kept separately from other app data. This creates `compare.json`.
-const dbPath = join(process.cwd(), 'compare.json');
+// vehicles are kept separately from other app data.
+const dbPath = process.env.COMPARE_DB_PATH ?? (process.env.VERCEL ? join(tmpdir(), 'compare.json') : join(process.cwd(), 'compare.json'));
 
 export type CompareDb = {
   wishlist: string[];

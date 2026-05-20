@@ -75,6 +75,3 @@ If no API key is configured, the app falls back to local comparison summaries an
 - `lib/` - local compare storage helpers
 - `public/` - static images and assets
 
-## Deployment
-
-The app can be deployed like any standard Next.js project. Make sure `compare.json` is writable in the runtime environment if you want wishlist persistence and generated vehicle history to survive across requests.
