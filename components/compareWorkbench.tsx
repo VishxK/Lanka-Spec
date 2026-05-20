@@ -31,6 +31,20 @@ type ResolveVehicleResponse = {
   error?: string;
 };
 
+async function readJsonResponse<T>(response: Response): Promise<T | null> {
+  const text = await response.text();
+
+  if (!text.trim()) {
+    return null;
+  }
+
+  try {
+    return JSON.parse(text) as T;
+  } catch {
+    return null;
+  }
+}
+
 const resultSpecOrder: Array<keyof Vehicle['specs']> = [
   'hp',
   'torque',
@@ -160,10 +174,14 @@ export default function CompareWorkbench() {
         body: JSON.stringify({ query: searchValue }),
       });
 
-      const data = (await response.json()) as ResolveVehicleResponse;
+      const data = await readJsonResponse<ResolveVehicleResponse>(response);
 
       if (!response.ok) {
-        throw new Error(data.error ?? 'Could not resolve the vehicle.');
+        throw new Error(data?.error ?? 'Could not resolve the vehicle.');
+      }
+
+      if (!data) {
+        throw new Error('Could not resolve the vehicle.');
       }
 
       setSelectedIds(Array.isArray(data.wishlist) ? data.wishlist : []);
@@ -214,10 +232,14 @@ export default function CompareWorkbench() {
         body: JSON.stringify({ vehicleIds: selectedIds }),
       });
 
-      const data = (await response.json()) as CompareApiResponse & { error?: string };
+      const data = await readJsonResponse<CompareApiResponse & { error?: string }>(response);
 
       if (!response.ok) {
-        throw new Error(data.error ?? 'Could not build comparison');
+        throw new Error(data?.error ?? 'Could not build comparison');
+      }
+
+      if (!data) {
+        throw new Error('Could not build comparison');
       }
 
       setSummary(data.summary);
