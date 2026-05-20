@@ -5,7 +5,7 @@ import Link from 'next/link';
 import type { Vehicle } from '@/data/vehicles';
 import { vehicles } from '@/data/vehicles';
 import type { StoredVehicle } from '@/lib/compare-db';
-import ReactMarkdown from 'react-markdown';
+import ReactMarkdown, { type Components } from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 
 type CompareApiResponse = {
@@ -234,15 +234,15 @@ export default function CompareWorkbench() {
     }
   }
 
-  const markdownComponents = {
-    p: ({ children }: { children: React.ReactNode }) => <p className="mb-3 text-sm text-slate-300 last:mb-0">{children}</p>,
-    h1: ({ children }: { children: React.ReactNode }) => <h1 className="mb-3 text-2xl font-bold text-slate-100">{children}</h1>,
-    h2: ({ children }: { children: React.ReactNode }) => <h2 className="mb-2 text-xl font-semibold text-slate-100">{children}</h2>,
-    h3: ({ children }: { children: React.ReactNode }) => <h3 className="mb-2 text-lg font-semibold text-slate-100">{children}</h3>,
-    ul: ({ children }: { children: React.ReactNode }) => <ul className="mb-3 list-disc space-y-1 pl-5 text-sm text-slate-300">{children}</ul>,
-    ol: ({ children }: { children: React.ReactNode }) => <ol className="mb-3 list-decimal space-y-1 pl-5 text-sm text-slate-300">{children}</ol>,
-    li: ({ children }: { children: React.ReactNode }) => <li>{children}</li>,
-    strong: ({ children }: { children: React.ReactNode }) => <strong className="font-semibold text-slate-100">{children}</strong>,
+  const markdownComponents: Components = {
+    p: ({ children }) => <p className="mb-3 text-sm text-slate-300 last:mb-0">{children}</p>,
+    h1: ({ children }) => <h1 className="mb-3 text-2xl font-bold text-slate-100">{children}</h1>,
+    h2: ({ children }) => <h2 className="mb-2 text-xl font-semibold text-slate-100">{children}</h2>,
+    h3: ({ children }) => <h3 className="mb-2 text-lg font-semibold text-slate-100">{children}</h3>,
+    ul: ({ children }) => <ul className="mb-3 list-disc space-y-1 pl-5 text-sm text-slate-300">{children}</ul>,
+    ol: ({ children }) => <ol className="mb-3 list-decimal space-y-1 pl-5 text-sm text-slate-300">{children}</ol>,
+    li: ({ children }) => <li>{children}</li>,
+    strong: ({ children }) => <strong className="font-semibold text-slate-100">{children}</strong>,
   };
 
   useEffect(() => {
